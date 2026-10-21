@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanQuiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app-container">
+        <header class="header">
+            <h1>FinanQuiz</h1>
+            <div class="stats">
+                <span id="progress-text">Pregunta 1 de 6</span>
+                <span id="score-text">Puntuación: 0</span>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </header>
+
+        <!-- Contenedor del Quiz -->
+        <section id="quiz-container" aria-live="polite">
+            <h2 id="question-text">Cargando pregunta...</h2>
+            <div id="options-container" class="options-grid">
+                <!-- Los botones de opciones se generarán por JS -->
+            </div>
+
+            <!-- Contenedor de Feedback (Oculto por defecto) -->
+            <div id="feedback-container" class="feedback hidden" aria-live="assertive">
+                <h3 id="feedback-title"></h3>
+                <p id="feedback-explanation"></p>
+                <button id="next-btn" class="btn-primary">Siguiente pregunta</button>
+            </div>
+        </section>
+
+        <!-- Contenedor de Resultados (Oculto por defecto) -->
+        <section id="results-container" class="results hidden" aria-live="polite">
+            <h2>Resultados Finales</h2>
+            <div class="score-display">
+                <p class="points-text" id="final-score-text">0 puntos</p>
+                <p class="percentage-text" id="final-percentage-text">0% de aciertos</p>
+            </div>
+            <p id="final-message" class="final-message"></p>
+            <button id="restart-btn" class="btn-primary">Reiniciar partida</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

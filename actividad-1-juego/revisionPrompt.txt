@@ -1,0 +1,22 @@
+Paso 3. Revisión del prompt antes de ejecutarlo
+1. ¿Se puede saber cuándo el juego está terminado?
+
+Sí, porque el juego tiene seis preguntas y, cuando se responden todas, muestra 
+la puntuación final y un botón para reiniciar la partida.
+
+2. ¿Se especifica dónde debe vivir cada parte del código?
+
+Sí, se indica que el código debe estar separado en tres archivos: 
+index.html para la estructura, styles.css para el diseño y app.js para la lógica del juego.
+
+3. ¿Qué salida será posible comprobar en el navegador?
+
+Podremos comprobar que aparecen las preguntas con sus cuatro respuestas, 
+que se indica si hemos acertado, que la puntuación se actualiza y que, al terminar,
+aparece el resultado final con la opción de volver a jugar.
+
+4. ¿Qué requisito impediría que el resultado dependiera de un servicio externo?
+
+El requisito que indica que el juego debe funcionar localmente al abrir index.html,
+sin utilizar dependencias externas ni necesitar un servidor. Así, el juego 
+podrá ejecutarse directamente en el navegador.
