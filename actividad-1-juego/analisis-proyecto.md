@@ -181,3 +181,8 @@ A continuación se muestran las capturas del proceso y del resultado.
 ![Solicitud de cambios con comprobacion de carga de la skill @revision-juego](./capturas/image.png)
 
 ![Respuesta a la solicitud de Opencode](./capturas/image-3.png)
+
+## Paso 8: Crear la skill documentar-juego
+
+![Solicitud de documentacion](./capturas/image-5.png)
+![Respuesta](./capturas/image-6.png)

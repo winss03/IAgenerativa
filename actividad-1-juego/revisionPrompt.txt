@@ -20,3 +20,13 @@ aparece el resultado final con la opción de volver a jugar.
 El requisito que indica que el juego debe funcionar localmente al abrir index.html,
 sin utilizar dependencias externas ni necesitar un servidor. Así, el juego 
 podrá ejecutarse directamente en el navegador.
+
+
+Una explicación de cinco a ocho líneas: qué hizo el agente, qué hizo la skill.
+
+El agente leyó las instrucciones del proyecto y el archivo `app.js`.
+Identificó las funciones y las variables que controlan el estado del juego.
+Después explicó qué partes podrían necesitar comentarios JSDoc y por qué.
+La skill proporcionó un procedimiento reutilizable para realizar esa tarea.
+También indicó el formato de la respuesta y las restricciones que debía respetar.
+Así, el agente pudo explicar el flujo del juego sin cambiar su código ni su comportamiento.
