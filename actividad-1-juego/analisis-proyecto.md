@@ -156,3 +156,20 @@ Tras revisar `app.js`, `index.html` y `styles.css`, aquí está el análisis de 
     - No se realizaron cambios en `app.js` ni en ningún otro archivo.
     - La solicitud se canceló antes de proceder, respetando el principio de no modificar el código sin instrucciones claras y específicas.
     - El proyecto permanece en su estado anterior a esta interacción.
+
+## Paso 6: Crear el agente revisor del juego
+
+Se creó el subagente `revisor-juego` para revisar el juego sin modificar sus archivos.
+A continuación se muestran las capturas del proceso y del resultado.
+
+### Captura 1. Solicitud de cambios al subagente
+
+![Solicitud al agente principal](./capturas/image-1.png)
+
+### Captura 2. Solicitud al agente
+
+[Se solicita que aplique los cambios y revise si tiene los permisos o no.](./capturas/image-2.png)
+
+### Captura 3. Respuesta del agente
+
+![Responde que cumple con los requisitos de restricción](./capturas/image-4.png)
