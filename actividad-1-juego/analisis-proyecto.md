@@ -157,6 +157,7 @@ Tras revisar `app.js`, `index.html` y `styles.css`, aquí está el análisis de 
     - La solicitud se canceló antes de proceder, respetando el principio de no modificar el código sin instrucciones claras y específicas.
     - El proyecto permanece en su estado anterior a esta interacción.
 
+
 ## Paso 6: Crear el agente revisor del juego
 
 Se creó el subagente `revisor-juego` para revisar el juego sin modificar sus archivos.
@@ -173,3 +174,10 @@ A continuación se muestran las capturas del proceso y del resultado.
 ### Captura 3. Respuesta del agente
 
 ![Responde que cumple con los requisitos de restricción](./capturas/image-4.png)
+
+
+## Paso 7: Crear la skill revision-juego
+
+![Solicitud de cambios con comprobacion de carga de la skill @revision-juego](./capturas/image.png)
+
+![Respuesta a la solicitud de Opencode](./capturas/image-3.png)
