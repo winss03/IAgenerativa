@@ -75,3 +75,63 @@ Contiene todo el comportamiento interactivo en vanilla JS:
 3. **Navegación 100% por teclado**: Tab → Enter → Tab → Enter, en todas las preguntas, sin ratón.
 4. **Reinicio durante la partida**: si se añadiera un botón de reinicio rápido, el estado debería resetearse por completo.
 5. **Edge case de array vacío**: modificar el array `questions` a uno vacío → el juego debería manejar el error graceful o mostrar un mensaje.
+
+---
+
+## 4. Paso 4: Creación y comprobación de AGENTS.md
+
+### Lee las normas del proyecto y revisa app.js. Indica qué reglas puedes comprobar ahora y cuáles requieren probar el juego en el navegador. No modifiques archivos.
+
+Tras revisar `app.js`, `index.html` y `styles.css`, aquí está el análisis de qué comprobaciones puedo hacer ahora mismo y cuáles requieren el navegador:
+
+---
+
+## ✅ Comprobaciones que puedo verificar ahora (revisión estática del código)
+
+### 1. Estructura de datos
+- Las **6 preguntas** están definidas en el array `questions` con estructura correcta: `question`, `options` (4 por pregunta), `correctIndex`, `explanation`.
+- Todos los `correctIndex` son válidos (0-3).
+
+### 2. Lógica de respuesta
+- **Respuesta correcta** (`app.js:148-152`): incrementa `score`, añade clase `correct`, muestra título "¡Respuesta Correcta!", quita clase `incorrect-feedback`, muestra explicación.
+- **Respuesta incorrecta** (`app.js:153-158`): no incrementa puntuación, añade clase `incorrect`, muestra título "Respuesta Incorrecta", añade clase `incorrect-feedback`, **resalta la correcta** con `allButtons[currentQuestion.correctIndex].classList.add('correct')`.
+- Los botones se deshabilitan tras responder (`app.js:145-146`).
+
+### 3. Puntuación y progreso
+- `updateHeader()` (`app.js:103-108`): calcula texto "Pregunta X de 6", muestra puntuación y anchura de barra como `(currentQuestionIndex / questions.length) * 100`.
+- La pantalla final (`app.js:184-206`): calcula porcentaje con `Math.round((score / 6) * 100)`.
+- Mensajes finales bien definidos: 0-2 puntos → primer mensaje; 3-5 → segundo; 6 → tercero.
+
+### 4. Reinicio
+- `initGame()` (`app.js:93-100`): resetea `currentQuestionIndex = 0`, `score = 0`, muestra quiz, oculta resultados, llama a `updateHeader()` y `loadQuestion()`.
+- Event listener en `restartBtn` (`app.js:210`).
+
+### 5. Gestión del foco (código)
+- Foco inicial en primera opción con `setTimeout` (`app.js:133-136`).
+- Foco en `nextBtn` tras responder (`app.js:168`).
+- Foco en `restartBtn` tras resultados (`app.js:205`).
+- `tabIndex = 0` y `role="button"` en cada opción (`app.js:125-126`).
+- Estilos CSS de `:focus-visible` presentes (`styles.css:104-107`).
+
+### 6. Sin dependencias externas
+- No hay `fetch`, APIs externas, CDNs ni scripts de terceros. Solo archivos locales.
+
+### 7. HTML semántico
+- Uso de `<main>`, `<header>`, `<section>`, `aria-live="polite"` y `aria-live="assertive"`.
+- Todos los `id` referenciados en JS existen en el HTML.
+
+---
+
+## 🌐 Comprobaciones que requieren probar en el navegador
+
+1. **Feedback visual al responder correctamente**: confirmar que el fondo verde y borde se aplican y que la explicación se muestra.
+2. **Feedback visual al responder incorrectamente**: confirmar que la opción elegida se pone roja, la correcta se resalta en verde, y aparece el borde rojo en el feedback.
+3. **Pantalla final tras 6 preguntas**: verificar que la barra llega al 100%, se oculta el quiz, se muestran los resultados con porcentaje y mensaje correctos según la puntuación.
+4. **Reiniciar**: abrir el juego, responder varias preguntas, pulsar "Reiniciar partida" y comprobar que vuelve a la pregunta 1, puntuación 0 y barra al 0%.
+5. **Navegación por teclado**: recorrer opciones con `Tab`, seleccionar con `Enter`/`Espacio`, comprobar que el foco visible (outline verde) aparece y se traslada correctamente entre preguntas y pantallas.
+6. **Funcionamiento offline**: abrir `index.html` localmente sin conexión a internet y verificar que todo carga y funciona.
+7. **Responsive**: verificar que el diseño se adapta correctamente en pantallas pequeñas (<480px).
+
+---
+
+**Resumen**: puedo garantizar que la lógica interna, los datos y la estructura son correctos. Las 7 comprobaciones visuales e interactivas necesitan ejecución real en un navegador para validarlas.
