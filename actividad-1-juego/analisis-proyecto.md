@@ -135,3 +135,24 @@ Tras revisar `app.js`, `index.html` y `styles.css`, aquí está el análisis de 
 ---
 
 **Resumen**: puedo garantizar que la lógica interna, los datos y la estructura son correctos. Las 7 comprobaciones visuales e interactivas necesitan ejecución real en un navegador para validarlas.
+
+---
+
+## 5. Paso 5: Creación de permisos prudentes
+ - He pedido a opencode que haga un resumen de la solicitud y la respuesta que me ha dado cuando le pedi un cambio en app.js, para refleja que solicita permiso para los cambios que es lo que se buscaba en este paso:
+
+    ### Intercambio con el usuario sobre cambios en app.js
+
+    **Solicitud del usuario**: "haz un cambio pequeño en app.js"
+
+    **Mi respuesta**: Pregunté al usuario qué tipo de cambio pequeño quería realizar, ofreciendo ejemplos como corregir un texto, ajustar el comportamiento del juego o mejorar algo de accesibilidad. No realicé ninguna modificación en el archivo.
+
+    **Segunda intervención del usuario**: "cancelalo"
+
+    **Mi respuesta**: Confirmé que ningún cambio se había realizado y pregunté en qué más podía ayudar.
+
+    ### Observaciones
+
+    - No se realizaron cambios en `app.js` ni en ningún otro archivo.
+    - La solicitud se canceló antes de proceder, respetando el principio de no modificar el código sin instrucciones claras y específicas.
+    - El proyecto permanece en su estado anterior a esta interacción.
